@@ -1,80 +1,101 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+:root {
+    --color-grey: #333;
+    --color-secondgrey: #555;
+    --color-thirdgrey: #999;
+    --color-fourthgrey: #ddd;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-mainblue: #0096d6;
+    --color-secondblue: #80d8fe;
+    --color-wheat: #fff3de;
+}
 
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
 
 body {
-  width: 100%;
-  height: 100vh;
-  display: block;
-  background-color: rgb(0, 0, 0);
-  color: white;
+    color: var(--color-black);
+    background-color: var(--color-wheat);
 }
 
-/* Main header */
-.title {
-  text-align: center;
-  color: #0066cc;
-  padding: 35px;
-  font-size: 2.2rem;
-  background-color: #333; /* Set initial background color to grey */
+/* Main header styles */
+header {
+    background-color: var(--color-secondgrey);
+    margin-bottom: 20px;
 }
 
-.title:hover {
-  animation: titleBackgroundAnimation 5s infinite;
+header div#main-header {
+    font-family: "Sofia Sans", serif;
+    font-size: 20px;
+    padding: 60px;
+    text-align: center; /* aligns content horizontally to the center */
+    background-color: var(--color-grey);
+    color: var(--color-secondblue);
 }
 
-/* Animation for title background color */
-@keyframes titleBackgroundAnimation {
-  0% {
-    background-color: #333; /* Initial grey color */
-  }
-  50% {
-    background-color: #0066cc; /* Transition to blue */
-  }
-  100% {
-    background-color: #333; /* Reset to grey */
-  }
+/* NavBar styles */
+div#main-nav {
+    padding: 3px 0;
 }
 
-/* Navigation */
-nav ul {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  position: relative;
-  top: -10px;
+div#main-nav ul {
+    display: flex;
+    justify-content: space-around; /* puts space around the elements */
+    align-content: center;
+    list-style: none;
+    text-align: center;
 }
 
-nav ul li {
-  flex: 1;
-  padding: 20px;
-  background-color: #161616;
+div#main-nav ul li {
+    width: 10%;
+    font-size: 18px;
+    padding: 6px;
 }
 
-/* Link styles */
-a {
-  color: white; /* Set your desired color */
-  font-size: 1.2rem;
+/* link styles */
+div#main-nav ul li a {
+    display: flex; /* to easily center the content of each link */
+    justify-content: center;
+    color: var(--color-secondblue);
+    position: relative;
 }
 
-a:hover {
-  color: #0066cc; /* Set your desired color for hover effect */
-  border-bottom: 4px solid #0066cc;
-  transition: 0.3s ease;
+div#main-nav ul li a:hover {
+    color: var(--color-mainblue);
 }
 
-a:visited {
-  color: #004080; /* Set your desired color for visited links */
+/* main style */
+body main {
+    margin: 40px 40px 0;
 }
 
-/* Active page styles */
-.active {
-  color: #0066cc;
-  border-bottom: 4px solid #0066cc;
+/* underline appearance for links */
+div#main-nav ul li a::after {
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: var(--color-mainblue);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    opacity: 0;
+    transition: all 0.4s;
+    pointer-events: none;
+    border-radius: 3px;
+}
+
+div#main-nav ul li a:hover:after {
+    opacity: 1;
+}
+
+/* aside styles */
+div#aside1 {
+    float: left;
+    width: 300px;
+    margin: 37px 10px 0 0;
 }
